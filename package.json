@@ -1,0 +1,47 @@
+{
+  "name": "dsh-plugin-balance",
+  "version": "1.1.0",
+  "description": "DeepSeek / OpenCode Go / OpenAI 额度悬浮窗：输入框上方显示，支持 DSH 模型列表同步、自定义额度接口、可拖动、主题适配；内置 DSH 会话 token 用量统计（按 日/月/模型）。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "scripts/build.sh",
+    "README.md",
+    "LICENSE",
+    "CHANGES.md"
+  ],
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "balance",
+    "opencode",
+    "usage",
+    "tokens"
+  ],
+  "dependencies": {
+    "undici": "^8.10.0"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "pack": "npm pack",
+    "typecheck": "bash scripts/build.sh --check"
+  }
+}
