@@ -15,10 +15,13 @@
     "scripts/build.sh",
     "cordis.patch.yml",
     "README.md",
-    "README.zh-CN.md",
+    "README.en.md",
     "LICENSE",
     "CHANGES.md",
-    "docs/preview.png"
+    "docs/preview.png",
+    "docs/preview-usage.png",
+    "docs/preview-tokens.png",
+    "docs/preview-context.png"
   ],
   "license": "BSD-3-Clause",
   "repository": {
