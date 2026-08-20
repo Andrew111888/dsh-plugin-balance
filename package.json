@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-balance",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "DeepSeek / OpenCode Go / OpenAI 额度悬浮窗：输入框上方显示，支持 DSH 模型列表同步、自定义额度接口、可拖动、主题适配；内置 DSH 会话 token 用量统计（按 日/月/模型）与官方峰谷价费用估算。",
   "type": "module",
   "main": "lib/index.js",
