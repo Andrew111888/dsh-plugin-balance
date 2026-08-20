@@ -91,11 +91,13 @@ dsh plugin --profile web add dsh-plugin-balance
 
 ## 🧮 Token 用量与费用
 
-主进程半监听 DSH 会话事件流（`session/event`），把每次请求上报的 token 用量（输入 + 缓存写、缓存命中、输出）按 **日期 / 月份 / 模型** 折叠累计，并持久化到 `~/.dsh/storages/dsh-plugin-balance-usage.json`。
+主进程半监听 DSH 会话事件流（`session/event`），把每次请求上报的 token 用量（未命中输入 + 缓存写、缓存命中、输出）按 **日期 / 月份 / 模型** 折叠累计，并持久化到 `~/.dsh/storages/dsh-plugin-balance-usage.json`。
 
 - 幂等：同一 `turn:step` 的新样本替换旧样本；重载 / 重启后重放日志不会重复计数。
+- 模型归属按每个请求的 `request/header` 精确记录（会话中途切换模型也不会归错桶）。
+- 费用按 DeepSeek 官方定价计（`deepseek-v4-flash` / `deepseek-v4-pro`），按每个样本的**发生时刻**精确计价（详见界面内提示）。
 - 提供给前端：`GET /api/dsh-plugin-balance/tokens`。
-- 费用按 DeepSeek 官方定价计（`deepseek-v4-flash` / `deepseek-v4-pro`），按每个样本的发生时刻计价（详见界面内提示）。
+- 存储为 `version 8`：旧版数据不再估算折算，而是从会话事件流（含磁盘归档日志）精确重放重建。
 
 ## 📄 许可证
 

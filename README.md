@@ -95,11 +95,13 @@ Click the **bar-chart** button to open the **TOKEN 使用量** panel (today / th
 
 ## 🧮 Token usage & cost
 
-The host half listens to the DSH session event stream (`session/event`), folds each request's reported token usage (input + cache write, cache hit, output) **by day / month / model**, and persists it to `~/.dsh/storages/dsh-plugin-balance-usage.json`.
+The host half listens to the DSH session event stream (`session/event`), folds each request's reported token usage (cache-miss input + cache write, cache hit, output) **by day / month / model**, and persists it to `~/.dsh/storages/dsh-plugin-balance-usage.json`.
 
 - Idempotent: a newer sample for the same `turn:step` replaces the earlier one; replaying logs after a reload / restart never double-counts.
+- Model attribution follows each request's `request/header`, so sessions that switch models mid-flight stay in the right bucket.
 - Served to the client at `GET /api/dsh-plugin-balance/tokens`.
 - Cost uses DeepSeek's official pricing (`deepseek-v4-flash` / `deepseek-v4-pro`), priced by the moment each sample occurred (see the note in the UI).
+- Store format is `version 8`: legacy data is no longer estimated — it is rebuilt exactly by replaying session events, including archived sessions from the on-disk logs.
 
 ## 📄 License
 
