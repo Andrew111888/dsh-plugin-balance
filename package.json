@@ -13,6 +13,7 @@
     "lib/index.js",
     "lib/client.js",
     "scripts/build.sh",
+    "cordis.patch.yml",
     "README.md",
     "README.zh-CN.md",
     "LICENSE",
@@ -42,6 +43,9 @@
     "undici": "^8.10.0"
   },
   "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "platform": "web",
       "inject": [

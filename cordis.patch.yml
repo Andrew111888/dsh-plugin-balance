@@ -1,0 +1,6 @@
+# dsh-plugin-balance bundle 层：向 profile 注入插件行。
+# 让插件可通过 `dsh plugin add` 安装，并在 DSH 设置 / 插件市场里被识别。
+- insert:
+    - id: plugin-balance
+      name: dsh-plugin-balance
+      config: {}
