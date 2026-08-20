@@ -41,18 +41,31 @@ The widget is draggable, theme-aware (light/dark), and collapses into a slim pil
 
 > The plugin is published as a Git repo + `npm pack` tarball. Install it into the **`web` profile** (where the DSH Web UI runs).
 
-### Option A — from the GitHub Release tarball
+## 🚀 Install as a DSH plugin
 
-1. Download `dsh-plugin-balance-<version>.tgz` from the [Releases](https://github.com/Andrew111888/dsh-plugin-balance/releases) page.
-2. Add it as a `file:` dependency in your profile's `package.json` (e.g. `~/.dsh/profiles/web/package.json`):
+The plugin is published to **npm** (`dsh-plugin-balance`) and ships a `dsh.bundle` manifest, so it installs with the standard DSH plugin command:
+
+```bash
+dsh plugin add dsh-plugin-balance           # default profile
+# or explicitly the Web profile:
+dsh plugin --profile web add dsh-plugin-balance
+```
+
+> This resolves the npm package, writes the bundle entry, and enables the plugin. Restart `dsh web` (or reload) and refresh the browser page.
+
+### Manual install (by hand)
+
+If you manage the profile yourself (offline, or no `dsh` CLI):
+
+1. In your Web profile's `package.json` (e.g. `~/.dsh/profiles/web/package.json`), add the dependency — from npm, a tarball URL, or a local path:
 
    ```json
    "dependencies": {
-     "dsh-plugin-balance": "file:/path/to/dsh-plugin-balance-1.2.0.tgz"
+     "dsh-plugin-balance": "1.2.0"
    }
    ```
 
-3. Enable it in `cordis.patch.yml`:
+2. Enable it in `cordis.patch.yml` (the package ships the exact entry as `cordis.patch.yml`):
 
    ```yaml
    - insert:
@@ -60,21 +73,13 @@ The widget is draggable, theme-aware (light/dark), and collapses into a slim pil
          name: dsh-plugin-balance
    ```
 
-4. Install & restart:
+3. Install & restart:
 
    ```bash
    cd ~/.dsh/profiles/web
    pnpm install
    # restart `dsh web`, then refresh the browser page
    ```
-
-### Option B — local development
-
-```json
-"dsh-plugin-balance": "file:/home/yh/work/dsh-plugin-balance"
-```
-
-then follow steps 3–4 above.
 
 > Requires the `webServer` and `credentials` services (provided by `@deepseek-ai/dsh-web-app` in the web profile). The host half needs `credentials`, `webServer`, `llm`, `settings`, and `sessions`.
 

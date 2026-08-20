@@ -39,20 +39,29 @@
 
 ## 🚀 以插件形式安装
 
-> 插件以 Git 仓库 + `npm pack` 压缩包形式发布。安装在运行 DSH Web UI 的 **`web` profile** 中。
+插件已发布到 **npm**（`dsh-plugin-balance`）并带 `dsh.bundle` manifest，可直接用 DSH 标准插件命令安装：
 
-### 方式 A —— 从 GitHub Release 压缩包安装
+```bash
+dsh plugin add dsh-plugin-balance           # 默认 profile
+# 或显式指定 Web profile：
+dsh plugin --profile web add dsh-plugin-balance
+```
 
-1. 在 [Releases](https://github.com/Andrew111888/dsh-plugin-balance/releases) 页面下载 `dsh-plugin-balance-<version>.tgz`。
-2. 在 profile 的 `package.json`（如 `~/.dsh/profiles/web/package.json`）里作为 `file:` 依赖加入：
+> 该命令会解析 npm 包、写入 bundle 条目并启用插件。重启 `dsh web`（或热重载）后刷新浏览器页面即可。
+
+### 手动安装（自己改 profile）
+
+如果自己管理 profile（如离线环境 / 无 `dsh` CLI）：
+
+1. 在 Web profile 的 `package.json`（如 `~/.dsh/profiles/web/package.json`）中加入依赖（可用 npm 版本、tarball 或本地路径）：
 
    ```json
    "dependencies": {
-     "dsh-plugin-balance": "file:/path/to/dsh-plugin-balance-1.2.0.tgz"
+     "dsh-plugin-balance": "1.2.0"
    }
    ```
 
-3. 在 `cordis.patch.yml` 中启用：
+2. 在 `cordis.patch.yml` 中启用（包内已自带同样内容的 `cordis.patch.yml`）：
 
    ```yaml
    - insert:
@@ -60,21 +69,13 @@
          name: dsh-plugin-balance
    ```
 
-4. 安装并重启：
+3. 安装并重启：
 
    ```bash
    cd ~/.dsh/profiles/web
    pnpm install
    # 重启 `dsh web`，然后刷新浏览器页面
    ```
-
-### 方式 B —— 本地开发
-
-```json
-"dsh-plugin-balance": "file:/home/yh/work/dsh-plugin-balance"
-```
-
-之后同上执行第 3–4 步即可。
 
 > 需要 `webServer` 与 `credentials` 服务（web profile 的 `@deepseek-ai/dsh-web-app` 已提供）。主进程半依赖 `credentials`、`webServer`、`llm`、`settings`、`sessions`。
 
