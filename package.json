@@ -14,8 +14,10 @@
     "lib/client.js",
     "scripts/build.sh",
     "README.md",
+    "README.zh-CN.md",
     "LICENSE",
-    "CHANGES.md"
+    "CHANGES.md",
+    "docs/preview.png"
   ],
   "license": "BSD-3-Clause",
   "repository": {
