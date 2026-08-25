@@ -4,15 +4,15 @@
 #
 # Usage:
 #   bash scripts/make-preview-gif.sh <input-video> [fps] [width]
-#   bash scripts/make-preview-gif.sh ~/Videos/balance.webm 15 480
+#   bash scripts/make-preview-gif.sh ~/Videos/balance.webm 30 800
 #
 # Input can be any ffmpeg-readable video (mp4/mkv/webm/mov/gif...).
 # Output: docs/preview-anim.gif (loops forever, optimized palette).
 set -euo pipefail
 
 IN="${1:?usage: make-preview-gif.sh <input-video> [fps] [width]}"
-FPS="${2:-15}"
-WIDTH="${3:-480}"
+FPS="${2:-30}"
+WIDTH="${3:-800}"
 OUT="$(cd "$(dirname "$0")/.." && pwd)/docs/preview-anim.gif"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
