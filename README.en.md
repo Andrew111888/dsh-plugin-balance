@@ -41,6 +41,10 @@ The widget is draggable, theme-aware (light/dark), and collapses into a slim pil
 
 ![Balance type](docs/preview-balance-type.png)
 
+**⑤ Animation** — hover to expand, move away to collapse (spring animation)
+
+![Animation](docs/preview-anim.gif)
+
 ## Features
 
 | Area | What you get |

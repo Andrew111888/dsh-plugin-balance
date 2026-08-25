@@ -41,6 +41,10 @@
 
 ![余额类型](docs/preview-balance-type.png)
 
+**⑤ 动画演示** —— 悬停展开 / 移开收起（弹簧动画）
+
+![动画演示](docs/preview-anim.gif)
+
 ## 功能一览
 
 | 模块 | 说明 |
