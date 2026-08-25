@@ -19,9 +19,10 @@ trap 'rm -rf "$TMP"' EXIT
 
 command -v ffmpeg >/dev/null || { echo "ffmpeg required" >&2; exit 1; }
 
-# Trim silence head/tail manually beforehand if needed; here: crop to even
-# width, scale down, constant fps.
-vf="fps=${FPS},scale=${WIDTH}:-1:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4:diff_mode=rectangle"
+# Full-length conversion: static segments are frame-merged (mpdecimate) so
+# holds cost almost nothing while motion stays at full fps; no dithering —
+# flat UI colors compress better and look cleaner.
+vf="fps=${FPS},mpdecimate=hi=64*12:lo=64*5:frac=0.33,scale=${WIDTH}:-1:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=none:diff_mode=rectangle"
 
 ffmpeg -y -i "$IN" -loop 0 -vf "$vf" -an "$OUT" 2>/dev/null
 ls -la "$OUT"
