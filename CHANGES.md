@@ -2,6 +2,15 @@
 
 ## v1.4.1（2026-08-20）
 
+- **修复：点击 Token 图标整个悬浮窗消失**：
+  - 根因：v1.4.0 面板重构时模型行构建函数 `modelRowEl` 被调用但未定义，渲染模型列表抛 ReferenceError，React 无 error boundary 直接卸载整棵树。
+  - 用无头浏览器 CDP 端到端复现并验证修复：面板正常渲染（380×478），每日/每周/每月切换无异常。
+- 版本 `1.4.0 → 1.4.1`。
+
+---
+
+## v1.4.1（2026-08-20）
+
 - **按模型统计分组卡片**：新增 全部 / DeepSeek API / OpenCode Go 分组切换；DeepSeek 组聚合官方直连各型号为一行，OpenCode Go 组按其模型逐一细分（Kimi/GLM/Qwen/MiniMax/MiMo/LongCat 等）。
 - **图表升级**：
   - 每日视图不再显示直方图；
