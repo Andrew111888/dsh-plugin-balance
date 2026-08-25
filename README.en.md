@@ -59,6 +59,14 @@ dsh plugin --profile web add dsh-plugin-balance
 
 > This resolves the npm package, writes the bundle entry, and enables the plugin. Restart `dsh web` (or reload) and refresh the browser page.
 
+### 🛒 Install from the plugin market (listed on dsh-market)
+
+The plugin is listed in the [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) catalog and available on [dsh-market](https://github.com/dsh-market/dsh-market), the plugin market built into DSH Settings. With dsh-market installed, search for `dsh-plugin-balance` under **Settings → Plugin Market** and install / upgrade with one click:
+
+```bash
+dsh plugin --profile web add dshmarket
+```
+
 ### Manual install (by hand)
 
 If you manage the profile yourself (offline, or no `dsh` CLI):
@@ -67,7 +75,7 @@ If you manage the profile yourself (offline, or no `dsh` CLI):
 
    ```json
    "dependencies": {
-     "dsh-plugin-balance": "1.2.0"
+     "dsh-plugin-balance": "^1.3.6"
    }
    ```
 

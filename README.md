@@ -59,6 +59,14 @@ dsh plugin --profile web add dsh-plugin-balance
 
 > 该命令会解析 npm 包、写入 bundle 条目并启用插件。重启 `dsh web`（或热重载）后刷新浏览器页面即可。
 
+### 🛒 从插件市场安装（已上架 dsh-market）
+
+本插件已收录进 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 目录并上架 [dsh-market](https://github.com/dsh-market/dsh-market)——DSH 设置页内置的插件市场。安装 dsh-market 后，在 **设置 → 插件市场** 搜索 `dsh-plugin-balance` 即可一键安装 / 升级：
+
+```bash
+dsh plugin --profile web add dshmarket
+```
+
 ### 手动安装（自己改 profile）
 
 如果自己管理 profile（如离线环境 / 无 `dsh` CLI）：
@@ -67,7 +75,7 @@ dsh plugin --profile web add dsh-plugin-balance
 
    ```json
    "dependencies": {
-     "dsh-plugin-balance": "1.2.0"
+     "dsh-plugin-balance": "^1.3.6"
    }
    ```
 
