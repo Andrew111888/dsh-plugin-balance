@@ -25,25 +25,25 @@
 
 ## 🖼 预览
 
-**① 用量明细** —— OpenCode Go 5h / 每周 / 每月 用量与重置时间
+**① 动画演示** —— 悬停展开 / 移开收起（弹簧动画），直观感受交互
+
+![动画演示](docs/preview-anim.gif)
+
+**② 用量明细** —— OpenCode Go 5h / 每周 / 每月 用量与重置时间
 
 ![用量明细](docs/preview-usage.png)
 
-**② Token 用量统计** —— 今日 / 本月 / 总共 + 最近 7 天柱状图 + 按模型统计 + 费用估算
+**③ Token 用量统计** —— 今日 / 本月 / 总共 + 最近 7 天柱状图 + 按模型统计 + 费用估算
 
 ![Token 统计](docs/preview-tokens.png)
 
-**③ 实际效果** —— 对话框内的悬浮窗
+**④ 实际效果** —— 对话框内的悬浮窗
 
 ![实际效果](docs/preview-context.png)
 
-**④ 余额类型** —— 自动识别 DeepSeek 官方余额 / 套餐（OpenCode Go）用量
+**⑤ 余额类型** —— 自动识别 DeepSeek 官方余额 / 套餐（OpenCode Go）用量
 
 ![余额类型](docs/preview-balance-type.png)
-
-**⑤ 动画演示** —— 悬停展开 / 移开收起（弹簧动画）
-
-![动画演示](docs/preview-anim.gif)
 
 ## 功能一览
 

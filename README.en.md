@@ -25,25 +25,25 @@ The widget is draggable, theme-aware (light/dark), and collapses into a slim pil
 
 ## 🖼 Preview
 
-**① Usage detail** — OpenCode Go 5h / weekly / monthly usage and reset times
+**① Animation** — hover to expand, move away to collapse (spring animation), see the interaction in action
+
+![Animation](docs/preview-anim.gif)
+
+**② Usage detail** — OpenCode Go 5h / weekly / monthly usage and reset times
 
 ![Usage detail](docs/preview-usage.png)
 
-**② Token usage stats** — today / month / total + last-7-days chart + per-model breakdown + cost estimate
+**③ Token usage stats** — today / month / total + last-7-days chart + per-model breakdown + cost estimate
 
 ![Token stats](docs/preview-tokens.png)
 
-**③ In-context** — the floating widget above your chat
+**④ In-context** — the floating widget above your chat
 
 ![In context](docs/preview-context.png)
 
-**④ Balance type** — auto-detects DeepSeek official balance vs plan usage (OpenCode Go)
+**⑤ Balance type** — auto-detects DeepSeek official balance vs plan usage (OpenCode Go)
 
 ![Balance type](docs/preview-balance-type.png)
-
-**⑤ Animation** — hover to expand, move away to collapse (spring animation)
-
-![Animation](docs/preview-anim.gif)
 
 ## Features
 
