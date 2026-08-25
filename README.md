@@ -37,6 +37,10 @@
 
 ![实际效果](docs/preview-context.png)
 
+**④ 余额类型** —— 自动识别 DeepSeek 官方余额 / 套餐（OpenCode Go）用量
+
+![余额类型](docs/preview-balance-type.png)
+
 ## 功能一览
 
 | 模块 | 说明 |

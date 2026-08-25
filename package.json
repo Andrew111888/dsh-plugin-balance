@@ -24,7 +24,8 @@
     "docs/preview.png",
     "docs/preview-usage.png",
     "docs/preview-tokens.png",
-    "docs/preview-context.png"
+    "docs/preview-context.png",
+    "docs/preview-balance-type.png"
   ],
   "license": "BSD-3-Clause",
   "repository": {

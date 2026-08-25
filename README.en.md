@@ -37,6 +37,10 @@ The widget is draggable, theme-aware (light/dark), and collapses into a slim pil
 
 ![In context](docs/preview-context.png)
 
+**④ Balance type** — auto-detects DeepSeek official balance vs plan usage (OpenCode Go)
+
+![Balance type](docs/preview-balance-type.png)
+
 ## Features
 
 | Area | What you get |
